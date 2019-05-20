@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightgreen;
+    
+}
+
+#container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    font-size: 2rem;
+}
+
+#header-banner {
+    background-color: goldenrod;
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px 0;
+}
+
+.error {
+    display: inline-block;
+    font-size: .8rem;
+    color: red;
+}
+
+form  label {
+    display: inline-block;
+    width: 350px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+form  input {
+    display: inline-block;
+    border-radius: 5px;
+    height: 1.5rem;
+}
+
+#calculator-output {
+    display: block;
+    margin: 30px 0;
+}
+
+#payment {
+    display: inline;
+}
