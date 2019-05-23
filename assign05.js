@@ -89,7 +89,7 @@ function calculateMonthlyPayment() {
     let c = apr.value / 12; //monthly ihttp://www.cs.uregina.ca/Links/class-info/210/Recursion/nterest rate
     let n = loanTerm.value * 12;
     let d = 1 + c;
-    return (c * Math.pow(d,n))/(Math.pow(d,n)-1);
+    return amount.value * ((c * Math.pow(d,n))/(Math.pow(d,n)-1));
 }
 
 
@@ -100,7 +100,28 @@ document.getElementById("clear").addEventListener("click", function() {
     amount.value = "";
     loanTerm.value = "";
     monthlyPaymentOutput.value = "";
+
+    // change all borders to black
+    apr.style.borderColor = "black";
+    amount.style.borderColor = "black";
+    loanTerm.style.borderColor = "black";
+
+    // get rid of the error messages
+    if (document.getElementsByClassName("apr-error")[0].innerHTML != "");
+    {
+        document.getElementsByClassName("apr-error")[0].innerHTML = "";
+    }
+    if (document.getElementsByClassName("loan-term-error")[0].innerHTML != "");
+    {
+        document.getElementsByClassName("loan-term-error")[0].innerHTML = "";
+    }
+    if (document.getElementsByClassName("loan-amt-error")[0].innerHTML != "");
+    {
+        document.getElementsByClassName("loan-amt-error")[0].innerHTML = "";
+    }
     
+    monthlyPaymentOutput.innerHTML = "";
+
     apr.focus();
 })
 
@@ -110,7 +131,7 @@ document.getElementById("calculate").addEventListener("click", function() {
         if (monthlyPaymentOutput.style.color == "red") {
             monthlyPaymentOutput.style.color = "black";
         }
-        let result = calculateMonthlyPayment(); 
+        let result = calculateMonthlyPayment().toFixed(2); 
         monthlyPaymentOutput.innerHTML = `$${result}`;
     }
     else {

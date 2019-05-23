@@ -3,10 +3,15 @@
     padding: 0;
 }
 
+html {
+    }
+
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: lightgreen;
-    
+    max-height:100%;
+    background:linear-gradient(rgba(202,249,236,0.6),rgba(66,244,194,0.6)),url("green_house.jpg");
+    background-size:cover;
+    background-position: center;
 }
 
 #container {
@@ -52,4 +57,8 @@ form  input {
 
 #payment {
     display: inline;
+}
+
+#submit-buttons {
+    margin-left: 200px;
 }
