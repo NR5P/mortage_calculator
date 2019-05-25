@@ -42,7 +42,7 @@ function validateLoanTerm() {
         loanTerm.focus();
         return false;
     }
-    else if (loanTerm.value < 0 || loanTerm.value > 40 || loanTerm.value == "") {
+    else if (loanTerm.value <= 0 || loanTerm.value > 40 || loanTerm.value == "") {
         // error must be between 0 and equal to 40
         document.getElementsByClassName("loan-term-error")[0].innerHTML = "<p>number must be between 0 and 40</p>";
         loanTerm.style.borderColor = "red";
