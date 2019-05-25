@@ -86,10 +86,15 @@ function validateLoanAmount() {
 ////////////////////Payment calculation//////////////////////////////
 
 function calculateMonthlyPayment() {
-    let c = apr.value / 12; //monthly ihttp://www.cs.uregina.ca/Links/class-info/210/Recursion/nterest rate
+    // P = L[c(1 + c)n]/[(1 + c)n - 1]
+    // c is interest/12
+    let interestInDecimal = parseFloat(apr.value) / 100.0;
+    let c = interestInDecimal / 12; 
     let n = loanTerm.value * 12;
     let d = 1 + c;
-    return amount.value * ((c * Math.pow(d,n))/(Math.pow(d,n)-1));
+    //return amount.value * ((c * Math.pow(d,n))/(Math.pow(d,n)-1));
+    //return amount.value * (d^n / (d^n - 1))
+    return amount.value * (c * (Math.pow(d, n)) / (Math.pow(d, n) - 1))
 }
 
 
